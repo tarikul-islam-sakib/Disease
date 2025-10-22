@@ -28,7 +28,7 @@ with st.sidebar:
     
     if submit:
         try:
-            feature=[[age,sex,cp,treastbps,int(chol) if chol else 0,fps,
+            feature=[[age,sex,cp,int(trestbps) if chol else 0,int(chol) if chol else 0,fbs,
                       restecg,thalach,exang,oldpeak,slope,ca,thal]]
             prediction = model.predict(feature)
             result = "Yes" if prediction[0] == 1 else "No Disease"
